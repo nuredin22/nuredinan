@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+
+<style type="text/css">
+.contact-section {
+    padding: 50px 20px;
+    background: #f4f4f4;
+    width: 100%;
+    overflow-x: hidden; /* Prevents horizontal overflow */
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-header h3 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.contact-header h3 span {
+    color: #ff5722;
+}
+.box-contact {
+    display: flex;
+    justify-content: space-between; /* Ensure items stay on the same line */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    margin-bottom: 40px;
+}
+
+.contact-box {
+    flex: 1 1 25%; /* Reduced width to fit more boxes on one line */
+    margin: 10px;
+    padding: 15px;
+    background: #333;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 70%; /* Cap the maximum width at 30% */
+}
+
+.contact-box:hover {
+    background-color: #ff5722;
+}
+
+.box-link {
+    text-decoration: none;
+    color: white;
+    word-wrap: break-word; /* Prevent long text from overflowing */
+}
+
+.box-link h3 {
+    margin-bottom: 10px;
+    font-size: 1.2rem; /* Adjusted for smaller text */
+}
+
+.box-link p {
+    font-size: 0.9rem; /* Reduced font size to fit better */
+}
+
+/* Contact Form Section */
+.form-section {
+    max-width: 500px;
+    margin: 0 auto;
+    
+}
+
+form input[type="text"], 
+form input[type="email"], 
+form textarea {
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="submit"] {
+    width: 100px;
+    padding: 15px;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   
+}
+
+form input[type="submit"]:hover {
+    background-color: #e64a19;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    /* Stack boxes vertically on smaller screens */
+    .box-contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-box {
+        width: 80%;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust text size and form elements for mobile screens */
+    .contact-header h3 {
+        font-size: 2rem;
+    }
+
+    form input[type="submit"] {
+        font-size: 1rem;
+    }
+
+    .contact-box {
+        width: 100%;
+    }
+}
+
+</style>
+</head>
+<body>
+<section class="contact-section" id="contact">
+    <div class="contact-header">
+        <h3>Contact <span>Me</span></h3>
+    </div>
+
+    <div class="container">
+        <!-- Anchor Boxes for Call, Email, and Telegram -->
+        <div class="box-contact">
+            <div class="contact-box">
+                <a href="tel:+251922853675" class="box-link">
+                    <h3>Phone</h3>
+                    <p>Click to Call Me</p>
+                </a>
+            </div>
+
+            <div class="contact-box">
+                <a href="mailto:nuredinansha22@gmail.com" class="box-link">
+                    <h3>Email</h3>
+                    <p>Click to Email Me</p>
+                </a>
+            </div>
+
+            <div class="contact-box">
+                <a href="https://t.me/coder2285" class="box-link">
+                    <h3>Telegram</h3>
+                    <p>Click to Telegram Me</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="form-section">
+            <form action="send_email.php" method="post">
+                <input type="text" name="name" placeholder="Name" required> <br>
+                <input type="email" name="email" placeholder="Email" required> <br>
+                <textarea name="message" cols="30" rows="5" placeholder="Enter your message here..." required></textarea> <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
